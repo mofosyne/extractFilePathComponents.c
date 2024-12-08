@@ -1,22 +1,23 @@
-# filenameExtractPathAndExtension.c
+# extractFilePathComponents.c
 
-![CI/CD Status Badge](https://github.com/mofosyne/filenameExtractPathAndExtension.c/actions/workflows/ci.yml/badge.svg)
+![CI/CD Status Badge](https://github.com/mofosyne/extractFilePathComponents.c/actions/workflows/ci.yml/badge.svg)
 
-Minimal Filename Extraction Of Path And Extention
+Extract Directory, Filename And Extension from filepath
 
 ## install
 
 ```sh
-$ clib install mofosyne/filenameExtractPathAndExtension.c
+$ clib install mofosyne/extractFilePathComponents.c
 ```
 
 ## usage
 
 ```c
-char *fname = "./hello/test.exp";
-char path[200] = {0};
+char *path = "./hello/test.exp";
+char dir[200] = {0};
+char name[200] = {0};
 char ext[200] = {0};
-filenameExtractPathAndExtension(fname, path, sizeof(path), ext, sizeof(ext));
+extractFilePathComponents(path, dir, sizeof(dir), name, sizeof(name), ext, sizeof(ext));
 ```
 
 ## license
