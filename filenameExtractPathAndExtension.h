@@ -4,9 +4,7 @@
 extern "C"
 {
 #endif
-void filenameExtractPathAndExtension(const char *fname,
-                        char *pathBuff, int pathSize,
-                        char *extBuff, int extSize);
+void filenameExtractPathAndExtension(const char *fname, char *pathBuff, int pathSize, char *extBuff, int extSize);
 #ifdef __cplusplus
 }
 #endif
