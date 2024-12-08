@@ -3,35 +3,45 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "filenameExtractPathAndExtension.h"
+#include "extractFilePathComponents.h"
 
-bool test(char *fname, char *exp_path, char *exp_ext)
+bool test(char *path, char *exp_dir, char *exp_name, char *exp_ext)
 {
-    char path[200] = {0};
+    char dir[200] = {0};
+    char name[200] = {0};
     char ext[200] = {0};
-    filenameExtractPathAndExtension(fname, path, sizeof(path), ext, sizeof(ext));
-    printf("%s, %s, %s\r\n", fname, path, ext);
 
-    // printf("assert(test(\"%s\", \"%s\", \"%s\"));\r\n", fname, path, ext);
+    extractFilePathComponents(path, dir, sizeof(dir), name, sizeof(name), ext, sizeof(ext));
 
-    if (strcmp(path, exp_path) != 0)
+    printf("assert(test(\"%s\", \"%s\", \"%s\", \"%s\"));\r\n", path, dir, name, ext);
+
+    if (strcmp(dir, exp_dir) != 0)
     {
         return false;
     }
+
+    if (strcmp(name, exp_name) != 0)
+    {
+        return false;
+    }
+
     if (strcmp(ext, exp_ext) != 0)
     {
         return false;
     }
+
     return true;
 }
 
 int main(void)
 {
-    assert(test("test", "test", ""));
-    assert(test("test.", "test", ""));
-    assert(test("test.exp", "test", "exp"));
-    assert(test("./hello/test.exp", "./hello/test", "exp"));
-
-    printf("\r\nfilenameExtractPathAndExtension OK\r\n");
+    printf("TESTING extractFilePathComponents\r\n");
+    assert(test(NULL, "", "", ""));
+    assert(test("", "", "", ""));
+    assert(test("test", "", "test", ""));
+    assert(test("test.", "", "test", ""));
+    assert(test("test.exp", "", "test", "exp"));
+    assert(test("./hello/test.exp", "./hello/", "test", "exp"));
+    printf("\r\nPASSED extractFilePathComponents\r\n");
     return 0;
 }

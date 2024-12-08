@@ -2,7 +2,7 @@ all: clean test
 
 .PHONY: test
 test: $(OBJS)
-	$(CC) filenameExtractPathAndExtension.c test.c -std=c99 -Wall -Werror -o test
+	$(CC) extractFilePathComponents.c test.c -std=c99 -Wall -Werror -o test
 	./test
 
 .PHONY: clean

@@ -1,9 +1,9 @@
 {
-  "name": "filenameExtractPathAndExtension",
+  "name": "extractFilePathComponents",
   "version": "0.1.0",
-  "repo": "mofosyne/filenameExtractPathAndExtension.c",
-  "description": "Minimal Filename Extraction Of Path And Extention",
+  "repo": "mofosyne/extractFilePathComponents.c",
+  "description": "Extract Directory, Filename And Extension from filepath",
   "keywords": ["no heap", "malloc free", "no malloc", "filename", "extension"],
   "license": "GPL-3.0-or-later",
-  "src": ["filenameExtractPathAndExtension.c", "filenameExtractPathAndExtension.h"]
+  "src": ["extractFilePathComponents.c", "extractFilePathComponents.h"]
 }

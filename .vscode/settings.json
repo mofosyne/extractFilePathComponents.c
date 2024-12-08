@@ -60,6 +60,10 @@
     "filenameextractpathandextension.h": "c",
     "assert.h": "c",
     "stdio.h": "c",
-    "stdbool.h": "c"
+    "stdbool.h": "c",
+    "inttypes.h": "c",
+    "random": "c",
+    "stddef.h": "c",
+    "extractfilepathcomponents.h": "c"
   }
 }
